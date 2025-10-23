@@ -8,11 +8,63 @@ require.config({
 
 require(["highcharts-bundle"], function (bundle) {
   const options = {
+    chart: {
+      type: "solidgauge",
+      height: "110%"
+    },
+    title: {
+      text: "CPU Usage",
+      style: { fontSize: "18px" }
+    },
+    pane: {
+      startAngle: -150,
+      endAngle: 150,
+      background: {
+        backgroundColor: "#EEE",
+        innerRadius: "60%",
+        outerRadius: "100%",
+        shape: "arc"
+      }
+    },
+    tooltip: { enabled: false },
+    // The Y-axis defines the scale
+    yAxis: {
+      min: 0,
+      max: 100,
+      title: { text: "Usage %" },
+      stops: [
+        [0.1, "#55BF3B"], // green
+        [0.5, "#DDDF0D"], // yellow
+        [0.9, "#DF5353"]  // red
+      ],
+      lineWidth: 0,
+      tickWidth: 0,
+      minorTickInterval: null,
+      labels: { y: 16 }
+    },
+    plotOptions: {
+      solidgauge: {
+        dataLabels: {
+          y: -20,
+          borderWidth: 0,
+          useHTML: true,
+          format: '<div style="text-align:center"><span style="font-size:24px">{y}%</span></div>'
+        }
+      }
+    },
+    series: [
+      {
+        name: "CPU",
+        data: [65]
+      }
+    ]
+  };
+  /*{
     chart: { type: "column" },
     title: { text: "Monthly Sales" },
     xAxis: { categories: ["Jan", "Feb", "Mar"] },
     series: [{ name: "Sales", data: [29, 71, 106] }]
-  };
+  };*/
 
   // Call the bundle’s function
   bundle.renderChart("container", options, { exporting: true });

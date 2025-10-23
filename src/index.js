@@ -1,4 +1,6 @@
 import Highcharts from "highcharts";
+import HighchartsMore from "highcharts/highcharts-more";
+import "highcharts/modules/solid-gauge";
 //import { registerModules } from "./modules";
 
 /**
@@ -13,6 +15,7 @@ export function renderChart(containerId, chartOptions, modules = {}) {
     console.error("renderChart: Missing containerId or chartOptions");
     return;
   }
+  
 
   // Register optional modules
   //registerModules(Highcharts, modules);
