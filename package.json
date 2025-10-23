@@ -12,10 +12,8 @@
     "requirejs",
     "chart"
   ],
-  "author": "Your Name",
-  "license": "MIT",
+  "author": "Tanmay",
   "dependencies": {
-    "git": "^0.1.5",
     "highcharts": "^12.4.0"
   },
   "devDependencies": {
