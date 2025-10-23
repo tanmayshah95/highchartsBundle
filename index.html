@@ -1,0 +1,22 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
+<script>
+require.config({
+  paths: {
+    "highcharts-bundle": "./dist/highcharts-bundle"
+  }
+});
+
+require(["highcharts-bundle"], function (bundle) {
+  const options = {
+    chart: { type: "column" },
+    title: { text: "Monthly Sales" },
+    xAxis: { categories: ["Jan", "Feb", "Mar"] },
+    series: [{ name: "Sales", data: [29, 71, 106] }]
+  };
+
+  // Call the bundle’s function
+  bundle.renderChart("container", options, { exporting: true });
+});
+</script>
+
+<div id="container" style="height: 400px;"></div>
