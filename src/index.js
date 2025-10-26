@@ -1,5 +1,5 @@
 import Highcharts from "highcharts";
-import HighchartsMore from "highcharts/highcharts-more";
+import "highcharts/highcharts-more";
 import "highcharts/modules/solid-gauge";
 //import { registerModules } from "./modules";
 
