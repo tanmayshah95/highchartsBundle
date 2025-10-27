@@ -7,7 +7,9 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
     library: "HighchartsBundler",
     libraryTarget: "umd", // Works with RequireJS, Node, or browser global
-    globalObject: "this"
+    globalObject: "this",
+     // Ensure all code is in a single file
+     chunkLoading: false,
   },
   mode: "production"
 };

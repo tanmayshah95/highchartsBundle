@@ -7,10 +7,24 @@ require.config({
 });
 
 require(["highcharts-bundle"], function (bundle) {
-  const options = {
+  const treeMapOptions = 
+  {
+    chart: { type: "treemap" },
+    title: { text: "Sales Breakdown" },
+    series: [{
+      type: "treemap",
+      layoutAlgorithm: "squarified",
+      data: [
+        { name: "Laptops", value: 6 },
+        { name: "Phones", value: 3 },
+        { name: "Accessories", value: 4 }
+      ]
+    }]
+  }
+  const solidgaugeOptions = {
     chart: {
       type: "solidgauge",
-      height: "110%"
+      height: "80%"
     },
     title: {
       text: "CPU Usage",
@@ -59,15 +73,15 @@ require(["highcharts-bundle"], function (bundle) {
       }
     ]
   };
-  /*{
+  const columnOptions={
     chart: { type: "column" },
     title: { text: "Monthly Sales" },
     xAxis: { categories: ["Jan", "Feb", "Mar"] },
     series: [{ name: "Sales", data: [29, 71, 106] }]
-  };*/
+  };
 
   // Call the bundle’s function
-  bundle.renderChart("container", options, { exporting: true });
+  bundle.renderChart("container", columnOptions);//, { more: true, solidgauge: true });
 });
 </script>
 
