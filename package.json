@@ -14,7 +14,6 @@
   ],
   "author": "Tanmay Shah",
   "dependencies": {
-    "git": "^0.1.5",
     "highcharts": "^12.4.0"
   },
   "devDependencies": {
