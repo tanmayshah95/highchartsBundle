@@ -4,12 +4,14 @@
  */
 export async function registerModules(config = {}) {
   const imports = [];
+  import("highcharts/es-modules/masters/highcharts-more.src.js");
+  import("highcharts/es-modules/masters/modules/solid-gauge.src.js");
 
-  if (config.more) imports.push(import("highcharts/highcharts-more"));
+  if (config.more) imports.push(import("highcharts/es-modules/masters/highcharts-more.src.js"));
   if (config.stock) imports.push(import("highcharts/modules/stock"));
   if (config.treemap) imports.push(import("highcharts/modules/treemap"));
   if (config.sunburst) imports.push(import("highcharts/modules/sunburst"));
-  if (config.solidgauge) imports.push(import("highcharts/modules/solid-gauge"));
+  if (config.solidgauge) imports.push(import("highcharts/es-modules/masters/modules/solid-gauge.src.js"));
   if (config.heatmap) imports.push(import("highcharts/modules/heatmap"));
 
   // Utility modules
@@ -22,6 +24,8 @@ export async function registerModules(config = {}) {
   // Wait for all requested imports
   await Promise.all(imports);
 }
+
+
 
 // import "highcharts/highcharts-more";
 // import "highcharts/modules/stock";

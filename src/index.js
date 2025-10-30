@@ -69,7 +69,7 @@ export async function renderChart(containerId, chartOptions, modules = {}) {
   }
 
   // Load required modules dynamically
-  await registerModules(modules);
+  await registerModules(Highcharts, modules);
 
   // Apply custom global theme + plugins
   //applyCustomTheme();
