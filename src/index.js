@@ -39,6 +39,8 @@
 
 import Highcharts from "highcharts/es-modules/masters/highcharts.src.js";
 import { registerModules } from "./modules";
+import "highcharts/es-modules/masters/highcharts-more.src.js";
+  import "highcharts/es-modules/masters/modules/solid-gauge.src.js";
 //import { applyCustomTheme } from "./custom/theme";
 //import { registerCustomPlugins } from "./custom/plugin";
 
@@ -69,7 +71,7 @@ export async function renderChart(containerId, chartOptions, modules = {}) {
   }
 
   // Load required modules dynamically
-  await registerModules(Highcharts, modules);
+  registerModules(modules);
 
   // Apply custom global theme + plugins
   //applyCustomTheme();
