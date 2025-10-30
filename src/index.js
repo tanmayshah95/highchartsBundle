@@ -37,7 +37,7 @@
 // }
 
 
-import Highcharts from "highcharts";
+import Highcharts from "highcharts/es-modules/masters/highcharts.src.js";
 import { registerModules } from "./modules";
 //import { applyCustomTheme } from "./custom/theme";
 //import { registerCustomPlugins } from "./custom/plugin";
@@ -76,7 +76,7 @@ export async function renderChart(containerId, chartOptions, modules = {}) {
   //registerCustomPlugins();
 
   // Render chart
-  Highcharts.chart(containerId, chartOptions);
+  return Highcharts.chart(containerId, chartOptions); 
 }
 
 /** Return Highcharts instance (for advanced use) */

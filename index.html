@@ -81,7 +81,7 @@ require(["highcharts-bundle"], function (bundle) {
   };
 
   // Call the bundle’s function
-  bundle.renderChart("container", columnOptions);//, { more: true, solidgauge: true });
+  window.chart = bundle.renderChart("container", solidgaugeOptions, { more: true, solidgauge: true });
 });
 </script>
 
